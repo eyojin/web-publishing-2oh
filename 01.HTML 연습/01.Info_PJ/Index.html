@@ -11,12 +11,69 @@
 
     -->
     <meta name="viewport" content="width=\, initial-scale=1.0" />
-    <title>Naver 요약 뉴스 메인</title>
+    <title>네이버 요약 뉴스 메인</title>
+    <style>
+      /* 스타일시트 영역에 CSS를 쓰면 : 인터널 방식 */
+      /* 
+        스타일시트 사용법 : 
+        선택자 {
+          속성 : 값 ; 
+          속성 : 값 ; 
+        }
+      */
+
+      /* 상단영역 */
+      .header {
+        /* 배경색 */
+        background-color: #52f636;
+        /* 가로크기 */
+        width: 1280px;
+        /* 블록요소 마진 : 가로중앙설정 - 마영오
+        ->양쪽 마진이 auto면 중앙에 옴 */
+
+        margin: 0 auto;
+        /* 
+          [마진 셋팅법]
+          margin: 값; -사방셋팅
+          margin: 값 값; - 위아래 사방셋팅
+          margin: 값 값 값; -위 양쪽 아래셋팅
+          margin: 값 값 값 값; -각 방향별 셋팅
+        */
+      }
+
+      /* 타이틀 */
+      #main-title {
+        font-size: 52px;
+        color: #dfffed;
+        margin: 0;
+      }
+
+      /* 메뉴박스 */
+      .header ul {
+        /* 블릿없앰 lin */
+        list-style: none;
+        /* float:left를 사용했으므로  
+        자식요소 넘치는것 숨기기 사용 */
+        overflow: hidden;
+        /* 가로크기 */
+        width: 500px;
+        /* 마영오 */
+        margin: 0 auto;
+      }
+      /* 메뉴 리스트 */
+      .header ul li {
+        /* 블롯요소 옆으로 슝 
+        float은 흘러가게 설정하는 속성
+        left은 나는 왼쪽 너는 오른쪽으로 고고 */
+        float: left;
+      }
+    </style>
   </head>
   <body>
     <!-- 1. 상단영역 -->
-    <div class="header">
-      <h1 id="main-title">Naver 요약 뉴스</h1>
+    <div class="header" style="text-align: center">
+      <!-- 태그안에 style속성으로 지정하는 방법은 인라인 방식임 -->
+      <h1 id="main-title">네이버 요약 뉴스</h1>
       <ul>
         <li>경제</li>
         <li>사회</li>
@@ -36,4 +93,3 @@
     </div>
   </body>
 </html>
-
