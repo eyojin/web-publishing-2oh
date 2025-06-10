@@ -30,7 +30,9 @@
         /* 값으로 border-box라고 주면 패딩과 보더가 모두 포함된 박스가 설정 됨 */
 
         /* 보더(경계선) - border - 두께 종류 색상 */
-        border: 10px dotted hotpink; 
+        border: 6px dashed lightseagreen; 
+        /* 보더 모서리 둥글게 짝! */
+        border-radius: 24px;
         /* 하단 마진 덮어쓰기 */
         margin-bottom: 20px;
       }
@@ -50,7 +52,7 @@
         자식요소 넘치는것 숨기기 사용 */
         overflow: hidden;
         /* 가로크기 */
-        width: 407px;
+        width: 432px;
         /* 마영오 */
         margin: 0 auto;
         /* 패영오 */
@@ -72,7 +74,27 @@
         /* 패딩: 위아래0 양쪽17px */
         padding: 0 16px;
       }
+      /* ㅁㅔ뉴링크 */
+      header ul li a {
+        /*  글자색 */
+        color: #0c5600;
+        /* 밑줄없앰 */
+        text-decoration: none;
+        /* 글자두께 */
+        font-weight: bold;
+      }
 
+      /* 링크마우스 hover
+      가상 클래스 선택자 : hover 사용*/
+      header ul li a:hover{
+        /* 글자색 */
+        color: #ffff01;
+        /* 글자윗줄 */
+        text-decoration: underline;
+        /* 라인삭제 : option + shitf + k */
+      }
+      
+      
       /* 2. 메인영역 */
       .main{
         /* 글자정중앙(인라인요소 적용) */
