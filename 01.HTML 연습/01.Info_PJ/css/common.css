@@ -6,6 +6,8 @@
 
 /* web font 불러오기 */
 
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=swap');
+
 
 
 
@@ -57,7 +59,7 @@ font-family: "East Sea Dokdo", sans-serif;*/
 /* 타이틀 */
 #main-title {
   /* 글자체 */
-  font-family: "East Sea Dokdo", sans-serif;
+   font-family: "Do Hyeon", sans-serif;
   font-size: 52px;
   color: #dfffed;
   margin: 0;
@@ -65,7 +67,7 @@ font-family: "East Sea Dokdo", sans-serif;*/
 
 /* 메뉴박스 */
 .header ul {
-  font-family: "East Sea Dokdo", sans-serif;
+   font-family: "Do Hyeon", sans-serif;
   /* 블릿없앰 lin */
   list-style: none;
   /* float:left를 사용했으므로  
