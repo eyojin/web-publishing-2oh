@@ -4,6 +4,15 @@
 
 /* info PJ 공통 CSS - common.css */
 
+/* web font 불러오기 */
+<style>
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+</style>
+
+/* web font setting 
+font-family: "East Sea Dokdo", sans-serif;*/
+
+
 /* 공통 class */
 /* 1. border design class */
 .border-style1 {
@@ -60,7 +69,7 @@
         자식요소 넘치는것 숨기기 사용 */
   overflow: hidden;
   /* 가로크기 */
-  width: 432px;
+  width: 584px;
   /* 마영오 */
   margin: 0 auto;
   /* 패영오 */
@@ -83,7 +92,7 @@
   padding: 0 16px;
 }
 /* ㅁㅔ뉴링크 */
-header ul li a {
+.header ul li a {
   /*  글자색 */
   color: #0c5600;
   /* 밑줄없앰 */
@@ -94,13 +103,36 @@ header ul li a {
 
 /* 링크마우스 hover
       가상 클래스 선택자 : hover 사용*/
-header ul li a:hover {
+.header ul li a:hover {
   /* 글자색 */
   color: #ffff01;
   /* 글자윗줄 */
   text-decoration: underline;
   /* 라인삭제 : option + shitf + k */
 }
+
+/* 메뉴 사이에 구분자 넣기
+가상요소 사용
+1. ::before 요소의 contents 앞에 추가
+2. ::after 요소의 contents 앞에 추가
+콜론을 가상 요소는 두개(::) 사용 
+참고 ) 가상 classa는 콜론을 하나(:) 사용 ex) a:hover
+중요!!! 필수사항인 content를 반드시 써야함
+->content값으로 문자 또는 이미지 사용 가능  */
+
+/* .header ul li::after {
+content : url(../images/파일명); } */
+
+/* 첫 li 제외 : 형제 선택자 <+> 
+&요소+요소& = 2개이상의 요소가 있을 경우에만 사용 
+앞 요소 무시(?) */
+.header ul li+li::before {
+  content: ' | ';
+  margin: 0 15px;
+ }
+/* content : url (../images/파일명); */
+
+
 
 /* 2. 메인영역 */
 /* .main {}*/
