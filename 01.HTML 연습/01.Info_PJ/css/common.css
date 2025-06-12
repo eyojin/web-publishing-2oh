@@ -122,3 +122,14 @@ header ul li a:hover {
   /* 값 : italic / normal */
   font-style: normal;
 }
+/* CEO이름 */
+span.ceo-name {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: blue;}
+/* 전화번호 */
+span.tel-num {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: #ff5bcb;
+}
