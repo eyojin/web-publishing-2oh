@@ -30,8 +30,18 @@ font-family: "East Sea Dokdo", sans-serif;*/
 }
 /* 2. layout design class */
 .layout-common {
-  /* 가로크기 */
-   width: 1280px;
+  /* 가로크기 - 크기 고정 시 사용 */
+   /* width: 1280px; */
+
+   /* 최대 가로 크기 - max-width
+   max보다 box가 작아지면 auto전환
+   > 적응형으로 변환 */
+   max-width: 1280px;
+
+   /* 최소 가로 크기 - min-width
+   min보다 box가 작아지지 않도록 유지 */
+   min-width: 700px;
+   
   /* 블록요소 마진 : 가로중앙설정 - 마영오
         ->양쪽 마진이 auto면 중앙에 옴 */
 
