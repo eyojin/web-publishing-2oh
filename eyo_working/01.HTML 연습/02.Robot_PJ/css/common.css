@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/* Robot PJ : 공통모듈:화면의 기능 CSS - common.css */
+
+/******** 1.상단영역 *********/
+/* 겉박스 */
+#top-area{
+    /* 고정포지션 적용하기 - fixed */
+    position: fixed;
+    /* 위치값을 안주면 젠틀하다! 그래서 줘야햄(무조건은 아니얌)*/
+    top: 0;
+    /* 크기를 안주면 가로값은 내용만큼만 늘어남 - 판타롱 스타킹 */
+    width: 100%;
+    /* 맨위로 오도록 설정 */
+    z-index: 999;
+    /* 반투명 배경색 넣기 */
+    background-color: #0020b0e9;
+
+}
+/* 속박스 */
+.top-area{
+    /* flex 적용 - 직계자식 요소가 적용됨! */
+    display: flex;
+    /* flex 진행방향 정렬 : 양쪽 끝 정렬*/
+    justify-content: space-between;
+    /* flex 진행방향의 수직정렬 - align-items : 중앙정렬 */
+    align-items: center;
+    /* 최대 가로크기 1200px 에 중앙정렬 */
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+/* 로고박스 */
+.logo{
+    /* 부모자격 */
+    position: relative;
+
+}
+/* 로고이미지 */
+.logo img{
+    height: 100px;
+    /* 트렌지션 - transiting : 속시이지
+    값 순서는 속성 - 시간 - 이징 - 지연시간
+    null 이거나 all을 쓰면 모든 속성이 동일하게 적용 
+    시간은 초단위 's' */
+    transition: .5s ease-in-out;
+    
+}
+/* 로고글자 - absolute */
+.logo span{
+    position: absolute;
+    /* 부모는 .logo */
+    bottom: 20px;
+    left: 30px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.1;
+    /* 글자그림자  tsh*/
+    text-shadow: 2px 2px 4px rgb(90, 139, 255);
+}
+
+/* 로고 글자 span 박스에 hover 시 다음 형제인 img인 position 이동(transform의 translate X 축 사용)*/
+.logo span:hover + img {
+  /* transform:translateX(160%)
+  translateX : width값, translateY : height 값 , 두개 값 다 쓰려면 translate (x,y)  */
+  /* 로봇이 글자 위로 올라오게 하려면 z-index 를 사용 >  */
+  translate: 168%;
+  /* translate 도 동일하게 (x,y)값으로 조절 */
+}
+
+/* 메뉴박스 */
+.nav-menu ul{
+    /* flex box */
+    display: flex;
+    /* 메뉴간 간격 - gap */
+    gap: 30px;
+}
+/* 메뉴링크 */
+.nav-menu a{
+    font-size: 18px;
+    font-weight: bold;
+}
+/* 링크 hover */
+.nav-menu a:hover {
+    color : springgreen;
+}
+/******** 2.하단영역 *********/
+/* 겉박스 */
+#bottom-area{
+    /* 반투명배경색 넣기 */
+    background-color: #0020b0e9;
+}
+/* 속박스 */
+.bottom-area{
+    /* grid */
+    display: grid;
+    /* 그리트 템플릿 컬럼 설정 */
+    grid-template-columns:
+     repeat(auto-fit,minmax(250px,1fr));
+    /* repeat 값으로 auto-fit : 자동맞춤 
+    minmax(값1,값2) : (최소값,최대값)>>최대값은 1fr >>여백없이 자동분할*/
+
+
+     /* grid-template-columns: repeat(4,1fr); repeat 1:1:1:
+     grid-template-columns: repeat(3,200px); 3colume 200px */
+    
+     /* grid사이 간격 - grid-gap : 줄간격,열간격 */
+     grid-gap: 20px 40px;
+    color: aliceblue;
+    padding: 40px 20px;
+    /* 박스중앙 */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 하단모든링크 */
+.bottom-area a {
+  color: #ccc;
+
+}
+
+
+/* 하단링크 hover 시 */
+.bottom-area a:hover {
+  color: #00ffff;
+}
+
+/* 회사 정보 */
+.company-info p {
+  margin: 8px 0;
+}
+
+/* 빠른 링크, 법적 정보, 팔로우 영역 공통 스타일 */
+.quick-links ul,
+.legal ul,
+.follow-us ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 뉴스레터 영역 */
+.newsletter p {
+  margin-bottom: 10px;
+}
+
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.newsletter input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+}
+
+.newsletter button {
+  padding: 8px 16px;
+  background-color: #00ffff;
+  color: #004cff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+  background-color: skyblue;
+  color: #004cff;
+  outline: 1px solid #ff1803;
+}
+
+

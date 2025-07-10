@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* @charset은 css문서의 문자형식을 
+지정하는 코드임. utf-8은 2바이트 문자를 모두 처리하는 방식임 */
+
+/* info PJ 공통 CSS - common.css */
+
+/* web font 불러오기 */
+
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=swap');
+
+
+
+
+/* web font setting 
+font-family: "East Sea Dokdo", sans-serif;*/
+
+
+/* 공통 class */
+/* 1. border design class */
+.border-style1 {
+  /* 보더(경계선) - border - 두께 종류 색상 */
+  border: 6px dashed lightseagreen;
+  /* 보더 모서리 둥글게 짝! */
+  border-radius: 24px;
+   /* 박스 크기가 1280px 인데 패딩을 주면 패딩만큼 영역을 차지하니까 안쪽으로 패딩을 생기게 해야함.
+        그것은 box-sizing속성 */
+
+  box-sizing: border-box;
+  /* 값으로 border-box라고 주면 패딩과 보더가 모두 포함된 박스가 설정 됨 */
+}
+/* 2. layout design class */
+.layout-common {
+  /* 가로크기 - 크기 고정 시 사용 */
+   /* width: 1280px; */
+
+   /* 최대 가로 크기 - max-width
+   max보다 box가 작아지면 auto전환
+   > 적응형으로 변환 */
+   max-width: 1280px;
+
+   /* 최소 가로 크기 - min-width
+   min보다 box가 작아지지 않도록 유지 */
+   min-width: 700px;
+   
+  /* 블록요소 마진 : 가로중앙설정 - 마영오
+        ->양쪽 마진이 auto면 중앙에 옴 */
+
+  margin: 0 auto;
+         /* 
+          [마진 셋팅법]
+          margin: 값; -사방셋팅
+          margin: 값 값; - 위아래 사방셋팅
+          margin: 값 값 값; -위 양쪽 아래셋팅
+          margin: 값 값 값 값; -각 방향별 셋팅
+        */
+  padding: 16px;
+  /* 패딩 16px */
+}
+
+/* 상단영역 */
+.header {
+  /* 배경색 */
+  background-color: #52f636;
+
+  /* 하단 마진 덮어쓰기 */
+  margin-bottom: 20px;
+}
+
+/* 타이틀 */
+#main-title {
+  /* 글자체 */
+   font-family: "Do Hyeon", sans-serif;
+  font-size: 52px;
+  color: #dfffed;
+  margin: 0;
+}
+
+/* 메뉴박스 */
+.header ul {
+   font-family: "Do Hyeon", sans-serif;
+  /* 블릿없앰 lin */
+  list-style: none;
+  /* float:left를 사용했으므로  
+        자식요소 넘치는것 숨기기 사용 */
+  overflow: hidden;
+  /* 가로크기 */
+  width: 584px;
+  /* 마영오 */
+  margin: 0 auto;
+  /* 패영오 */
+  padding: 0;
+}
+/* 메인로고 */
+#main-logo {
+  width: 44px;
+}
+/* 메뉴 리스트 */
+.header ul li {
+  /* 블롯요소 옆으로 슝 
+        float은 흘러가게 설정하는 속성
+        left은 나는 왼쪽 너는 오른쪽으로 고고 */
+  float: left;
+
+  /* 글자크키 */
+  font-size: 20px;
+  /* 패딩: 위아래0 양쪽17px */
+  padding: 0 16px;
+}
+/* ㅁㅔ뉴링크 */
+.header ul li a {
+  /*  글자색 */
+  color: #0c5600;
+  /* 밑줄없앰 */
+  text-decoration: none;
+  /* 글자두께 */
+  font-weight: bold;
+}
+
+/* 링크마우스 hover
+      가상 클래스 선택자 : hover 사용*/
+.header ul li a:hover {
+  /* 글자색 */
+  color: #ffff01;
+  /* 글자윗줄 */
+  text-decoration: underline;
+  /* 라인삭제 : option + shitf + k */
+}
+
+/* 메뉴 사이에 구분자 넣기
+가상요소 사용
+1. ::before 요소의 contents 앞에 추가
+2. ::after 요소의 contents 앞에 추가
+콜론을 가상 요소는 두개(::) 사용 
+참고 ) 가상 classa는 콜론을 하나(:) 사용 ex) a:hover
+중요!!! 필수사항인 content를 반드시 써야함
+->content값으로 문자 또는 이미지 사용 가능  */
+
+/* .header ul li::after {
+content : url(../images/파일명); } */
+
+/* 첫 li 제외 : 형제 선택자 <+> 
+&요소+요소& = 2개이상의 요소가 있을 경우에만 사용 
+앞 요소 무시(?) */
+.header ul li+li::before {
+  content: ' | ';
+  margin: 0 15px;
+ }
+/* content : url (../images/파일명); */
+
+
+
+/* 2. 메인영역 */
+/* .main {}*/
+
+
+/* 3.하단영역 */
+.footer {
+
+  background-color: #ccc;
+  text-align: center;
+  /* 상단 마진 덮어쓰기 */
+  margin-top: 20px;
+}
+/* 하단 주소 박스 */
+.footer address {
+  /* 글자크기 - font-size(fz숫자) */
+  font-size: 20px;
+  /* 글자 이탤릭 - font style (fs) */
+  /* 값 : italic / normal */
+  font-style: normal;
+}
+/* CEO이름 */
+span.ceo-name {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: blue;}
+/* 전화번호 */
+span.tel-num {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: #ff5bcb;
+}

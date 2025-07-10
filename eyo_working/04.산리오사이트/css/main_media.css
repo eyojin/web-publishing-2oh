@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* 산리오 사이트 메인 페이지 미디어쿼리 - main_media.css */
+
+/************ 미디어쿼리 ************/
+
+/****** 1024px 이하 미디어쿼리 시작 ******/
+@media screen and (max-width: 1024px) {
+  /* menu box 숨기기 */
+  .gnb,.banner img{
+    display: none;
+  }
+} /****** 1024px 이하 미디어쿼리 종료 ******/
+
+/****** 800px 이하 미디어쿼리 시작 ******/
+@media screen and (max-width: 800px) {
+  
+}
+/****** 800px 이하 미디어쿼리 종료 ******/
